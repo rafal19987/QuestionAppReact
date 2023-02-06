@@ -10,4 +10,8 @@ export const Wrapper = styled.button`
   font-size: ${({ theme }) => theme.fontSize.l};
   font-weight: 900;
   letter-spacing: 2px;
+
+  &:hover {
+    cursor: pointer;
+  }
 `
