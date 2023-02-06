@@ -7,7 +7,8 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-content: center;
   flex-wrap: wrap;
-  height: 95vh;
+  height: 93vh;
   width: 90vw;
+  max-width: 500px;
   background-color: ${({ theme }) => theme.colors.white};
 `

@@ -17,7 +17,7 @@ export const Counter = styled.div`
   margin-top: 20px;
   width: 100px;
   height: 40px;
-  font-size: ${({ theme }) => theme.fontSize.l};
+  font-size: ${({ theme }) => theme.fontSize.xl};
   font-weight: 900;
   color: ${({ theme }) => theme.colors.red};
 `
@@ -29,6 +29,7 @@ export const Question = styled.div`
   justify-content: center;
   width: 100%;
   min-height: 100px;
+  max-height: 100%;
   font-size: ${({ theme }) => theme.fontSize.l};
   color: ${({ theme }) => theme.colors.black};
   text-align: center;
@@ -40,7 +41,7 @@ export const Answer = styled.div`
   align-content: center;
   justify-content: center;
   width: 100%;
-  height: 500px;
+  height: 60%;
   font-size: ${({ theme }) => theme.fontSize.m};
   color: ${({ theme }) => theme.colors.black};
   text-align: center;

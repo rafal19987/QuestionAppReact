@@ -12,6 +12,7 @@ export const theme = {
     warning: '#E1D888',
   },
   fontSize: {
+    xl: '28px',
     l: '22px',
     m: '19px',
     s: '11px',
