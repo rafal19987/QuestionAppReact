@@ -5,9 +5,6 @@ import { Wrapper, Counter, Question, Answer } from './QuestionBody.styles'
 
 const QuestionBody = () => {
   let [actualIndexOfQuestion, setActualIndexOfQuestion] = useState(0)
-  let [actualQuestion, setActualQuestion] = useState(
-    questions[actualIndexOfQuestion]
-  )
   let [actualCounterValue, setActualCounterValue] = useState(
     actualIndexOfQuestion
   )
@@ -15,7 +12,6 @@ const QuestionBody = () => {
   const nextQuestion = () => {
     if (actualIndexOfQuestion < questions.length - 1) {
       setActualIndexOfQuestion((actualIndexOfQuestion += 1))
-      setActualQuestion(questions[actualIndexOfQuestion])
       setActualCounterValue(actualIndexOfQuestion)
       console.log(
         `ActualIndex: ${actualIndexOfQuestion} ActualQuestion: ${
@@ -24,7 +20,6 @@ const QuestionBody = () => {
       )
     } else {
       setActualIndexOfQuestion((actualIndexOfQuestion = 0))
-      setActualQuestion(questions[actualIndexOfQuestion])
       setActualCounterValue(actualIndexOfQuestion)
       console.log(
         `END ActualIndex: ${actualIndexOfQuestion} ActualQuestion: ${
@@ -39,8 +34,8 @@ const QuestionBody = () => {
       <Counter>
         {actualCounterValue + 1}/{questions.length}
       </Counter>
-      <Question>{actualQuestion.question}</Question>
-      <Answer>{actualQuestion.answer}</Answer>
+      <Question>{questions[actualIndexOfQuestion].question}</Question>
+      <Answer>{questions[actualIndexOfQuestion].answer}</Answer>
       <Button onClick={nextQuestion} buttonText="Next Question"></Button>
     </Wrapper>
   )
