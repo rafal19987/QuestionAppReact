@@ -4,38 +4,21 @@ import { questions } from '../../../data/questions'
 import { Wrapper, Counter, Question, Answer } from './QuestionBody.styles'
 
 const QuestionBody = () => {
-  let [actualIndexOfQuestion, setActualIndexOfQuestion] = useState(0)
-  let [actualCounterValue, setActualCounterValue] = useState(
-    actualIndexOfQuestion
-  )
+  let [indexQuestion, setIndexQuestion] = useState(0)
 
   const nextQuestion = () => {
-    if (actualIndexOfQuestion < questions.length - 1) {
-      setActualIndexOfQuestion((actualIndexOfQuestion += 1))
-      setActualCounterValue(actualIndexOfQuestion)
-      console.log(
-        `ActualIndex: ${actualIndexOfQuestion} ActualQuestion: ${
-          actualIndexOfQuestion + 1
-        }`
-      )
-    } else {
-      setActualIndexOfQuestion((actualIndexOfQuestion = 0))
-      setActualCounterValue(actualIndexOfQuestion)
-      console.log(
-        `END ActualIndex: ${actualIndexOfQuestion} ActualQuestion: ${
-          actualIndexOfQuestion + 1
-        }`
-      )
-    }
+    indexQuestion < questions.length - 1
+      ? setIndexQuestion((indexQuestion += 1))
+      : setIndexQuestion((indexQuestion = 0))
   }
 
   return (
     <Wrapper>
       <Counter>
-        {actualCounterValue + 1}/{questions.length}
+        {indexQuestion + 1}/{questions.length}
       </Counter>
-      <Question>{questions[actualIndexOfQuestion].question}</Question>
-      <Answer>{questions[actualIndexOfQuestion].answer}</Answer>
+      <Question>{questions[indexQuestion].question}</Question>
+      <Answer>{questions[indexQuestion].answer}</Answer>
       <Button onClick={nextQuestion} buttonText="Next Question"></Button>
     </Wrapper>
   )
